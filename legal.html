@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TubeMentor - Legal Documents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #FF0000;
+    --bg: #0A0A0A;
+    --bg2: #111111;
+    --border: #222222;
+    --text: #FFFFFF;
+    --text2: #AAAAAA;
+    --text3: #555555;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.8; }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 16px 40px; display: flex; align-items: center; justify-content: space-between;
+    background: rgba(10,10,10,0.9); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-text { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: var(--text); }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-links a { color: var(--text2); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a.active { color: var(--red); font-weight: 600; }
+  .container { max-width: 820px; margin: 0 auto; padding: 120px 40px 80px; }
+  .doc-header { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+  .doc-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--red); margin-bottom: 12px; }
+  .doc-header h1 { font-family: 'Syne', sans-serif; font-size: 40px; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .doc-meta { color: var(--text3); font-size: 13px; display: flex; gap: 24px; flex-wrap: wrap; }
+  .doc-meta span { display: flex; align-items: center; gap: 6px; }
+  .toc { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin-bottom: 48px; }
+  .toc h3 { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text3); margin-bottom: 16px; }
+  .toc ol { padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+  .toc a { color: var(--text2); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .toc a:hover { color: var(--red); }
+  .section { margin-bottom: 48px; scroll-margin-top: 80px; }
+  .section h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); color: var(--text); }
+  .section h3 { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 600; margin: 24px 0 10px; color: var(--text); }
+  .section p { color: var(--text2); margin-bottom: 14px; font-weight: 300; }
+  .section ul, .section ol { padding-left: 20px; margin-bottom: 14px; }
+  .section li { color: var(--text2); margin-bottom: 8px; font-weight: 300; }
+  .section a { color: var(--red); text-decoration: none; }
+  .section a:hover { text-decoration: underline; }
+  .highlight-box { background: rgba(255,0,0,0.05); border: 1px solid rgba(255,0,0,0.2); border-radius: 10px; padding: 20px 24px; margin: 20px 0; }
+  .highlight-box p { color: var(--text2); margin: 0; font-size: 14px; }
+  .highlight-box strong { color: var(--text); }
+  .info-box { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 20px 0; }
+  .info-box p { color: var(--text2); margin: 0; font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  th { background: var(--bg2); color: var(--text); font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 12px 16px; text-align: left; border: 1px solid var(--border); }
+  td { padding: 12px 16px; border: 1px solid var(--border); color: var(--text2); font-size: 14px; font-weight: 300; vertical-align: top; }
+  .page { display: none; }
+  .page.active { display: block; }
+  #privacy-page { display: block; }
+  .tab-switcher { display: flex; gap: 2px; background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 4px; margin-bottom: 40px; margin-top: 80px; }
+  .tab-btn { flex: 1; padding: 10px 16px; border-radius: 7px; border: none; background: transparent; color: var(--text2); font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-align: center; }
+  .tab-btn.active { background: var(--red); color: white; font-weight: 600; }
+  footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; }
+  footer p { color: var(--text3); font-size: 13px; }
+  footer a { color: var(--text3); text-decoration: none; }
+  footer a:hover { color: var(--text2); }
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .container { padding: 100px 20px 60px; }
+    .doc-header h1 { font-size: 28px; }
+    .tab-switcher { margin-top: 70px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div style="width:32px;height:32px;background:#FF0000;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;">▶</div>
+    <span class="logo-text">TubeMentor</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="#" onclick="showTab('privacy')" id="nav-privacy" class="active">Privacy Policy</a>
+    <a href="#" onclick="showTab('terms')" id="nav-terms">Terms of Service</a>
+    <a href="support.html">Support</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="tab-switcher">
+    <button class="tab-btn active" id="tab-privacy" onclick="showTab('privacy')">Privacy Policy</button>
+    <button class="tab-btn" id="tab-terms" onclick="showTab('terms')">Terms of Service</button>
+  </div>
+
+  <!-- ==================== PRIVACY POLICY ==================== -->
+  <div id="privacy-page" class="page active">
+
+    <div class="doc-header">
+      <div class="doc-label">Legal Document</div>
+      <h1>Privacy Policy</h1>
+      <div class="doc-meta">
+        <span>📅 Effective Date: March 9, 2026</span>
+        <span>🔄 Last Updated: March 9, 2026</span>
+        <span>🌍 Applies Globally</span>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p><strong>Summary:</strong> TubeMentor is designed with privacy first. We do not collect personal information, do not sell your data, and store your analysis history only on your own device. Third-party services (YouTube API, Claude AI, Apple StoreKit) are used solely to provide the app's core functionality.</p>
+    </div>
+
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ol>
+        <li><a href="#pp-1">Who We Are</a></li>
+        <li><a href="#pp-2">Information We Collect</a></li>
+        <li><a href="#pp-3">How We Use Your Information</a></li>
+        <li><a href="#pp-4">Third-Party Services</a></li>
+        <li><a href="#pp-5">Data Storage & Security</a></li>
+        <li><a href="#pp-6">Data Retention</a></li>
+        <li><a href="#pp-7">Your Rights (GDPR / KVKK / CCPA)</a></li>
+        <li><a href="#pp-8">Children's Privacy</a></li>
+        <li><a href="#pp-9">International Data Transfers</a></li>
+        <li><a href="#pp-10">Cookies & Tracking</a></li>
+        <li><a href="#pp-11">Changes to This Policy</a></li>
+        <li><a href="#pp-12">Contact & Data Controller</a></li>
+      </ol>
+    </div>
+
+    <div class="section" id="pp-1">
+      <h2>1. Who We Are</h2>
+      <p>TubeMentor ("we", "our", "us") is an independently developed iOS application created by <strong>Kemal Yavuz</strong>, an individual developer based in Turkey. The app is distributed globally through the Apple App Store.</p>
+      <p>For the purposes of applicable data protection laws (including the EU General Data Protection Regulation "GDPR", Turkish Personal Data Protection Law "KVKK" No. 6698, and the California Consumer Privacy Act "CCPA"), Kemal Yavuz acts as the <strong>data controller</strong> for any personal data processed through the TubeMentor application.</p>
+      <p><strong>Contact:</strong> <a href="mailto:support@tubementor.xyz">support@tubementor.xyz</a></p>
+    </div>
+
+    <div class="section" id="pp-2">
+      <h2>2. Information We Collect</h2>
+
+      <h3>2.1 Information You Provide Directly</h3>
+      <table>
+        <tr>
+          <th>Data Type</th>
+          <th>Purpose</th>
+          <th>Storage Location</th>
+        </tr>
+        <tr>
+          <td>YouTube video URLs you submit</td>
+          <td>To perform AI analysis on the video</td>
+          <td>Your device only (local)</td>
+        </tr>
+        <tr>
+          <td>Niche/topic input (for Trend Reports)</td>
+          <td>To generate trend analysis</td>
+          <td>Not stored</td>
+        </tr>
+        <tr>
+          <td>Draft title/description (Pre-Publish)</td>
+          <td>To analyze before publishing</td>
+          <td>Not stored</td>
+        </tr>
+      </table>
+
+      <h3>2.2 Information Collected Automatically</h3>
+      <table>
+        <tr>
+          <th>Data Type</th>
+          <th>Purpose</th>
+          <th>Storage Location</th>
+        </tr>
+        <tr>
+          <td>Analysis history & results</td>
+          <td>To display your past analyses</td>
+          <td>Your device only (local)</td>
+        </tr>
+        <tr>
+          <td>Monthly analysis count</td>
+          <td>Quota management (freemium)</td>
+          <td>Your device only (local)</td>
+        </tr>
+        <tr>
+          <td>Subscription tier status</td>
+          <td>Feature access control</td>
+          <td>Your device + Apple</td>
+        </tr>
+        <tr>
+          <td>Quota reset date</td>
+          <td>Monthly reset tracking</td>
+          <td>Your device only (local)</td>
+        </tr>
+      </table>
+
+      <h3>2.3 Information We Do NOT Collect</h3>
+      <ul>
+        <li>We do <strong>not</strong> collect your name, email address, or any account credentials</li>
+        <li>We do <strong>not</strong> collect your location data</li>
+        <li>We do <strong>not</strong> collect device identifiers (IDFA, IDFV)</li>
+        <li>We do <strong>not</strong> use analytics SDKs (no Firebase, no Mixpanel, no Amplitude)</li>
+        <li>We do <strong>not</strong> collect payment card information (handled entirely by Apple)</li>
+        <li>We do <strong>not</strong> build user profiles or engage in behavioral tracking</li>
+        <li>We do <strong>not</strong> use advertising networks or sell data to any third party</li>
+      </ul>
+
+      <div class="info-box">
+        <p><strong>Important note on YouTube data:</strong> The video metadata we fetch (title, description, tags, view count, like count) is entirely <strong>public information</strong> already visible to anyone on YouTube. We do not access private videos, your YouTube account, or any non-public data.</p>
+      </div>
+    </div>
+
+    <div class="section" id="pp-3">
+      <h2>3. How We Use Your Information</h2>
+      <p>We use the information described above exclusively for the following purposes:</p>
+      <ul>
+        <li><strong>Providing core app functionality:</strong> Analyzing YouTube videos and generating AI-powered insights</li>
+        <li><strong>Quota management:</strong> Tracking monthly analysis usage to enforce subscription tiers fairly</li>
+        <li><strong>Displaying history:</strong> Showing you your past analyses stored locally on your device</li>
+        <li><strong>Subscription management:</strong> Determining your access level (Free, Starter, Pro, Creator) via Apple StoreKit</li>
+      </ul>
+      <p>We do <strong>not</strong> use your information for advertising, profiling, marketing, or any purpose beyond those listed above.</p>
+      <p>The legal basis for processing under GDPR is: <strong>performance of a contract</strong> (Article 6(1)(b)) — processing is necessary to provide the service you have requested.</p>
+    </div>
+
+    <div class="section" id="pp-4">
+      <h2>4. Third-Party Services</h2>
+      <p>TubeMentor relies on the following third-party services to function. Each service processes data under its own privacy policy:</p>
+
+      <h3>4.1 YouTube Data API v3 (Google LLC)</h3>
+      <p>We use YouTube's official API to fetch publicly available video metadata (title, description, tags, statistics). No private or account data is accessed. This service is governed by:</p>
+      <ul>
+        <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+        <li><a href="https://developers.google.com/youtube/terms/api-services-terms-of-service" target="_blank">YouTube API Terms of Service</a></li>
+      </ul>
+      <p>Data sent: YouTube video URL. Data received: public video metadata only.</p>
+
+      <h3>4.2 Anthropic Claude API (Anthropic, PBC)</h3>
+      <p>We use Anthropic's Claude AI to analyze video metadata and generate insights. The video metadata (title, description, tags, statistics) is sent to Anthropic's servers for processing. <strong>No personally identifiable information is included in these requests.</strong> This service is governed by:</p>
+      <ul>
+        <li><a href="https://www.anthropic.com/privacy" target="_blank">Anthropic Privacy Policy</a></li>
+        <li><a href="https://www.anthropic.com/legal/aup" target="_blank">Anthropic Usage Policy</a></li>
+      </ul>
+      <p>Data sent to Anthropic: Video title, description, tags, view count, like count, comment count, duration. No user identifiers are sent.</p>
+
+      <h3>4.3 Apple StoreKit (Apple Inc.)</h3>
+      <p>In-app purchases and subscriptions are processed entirely by Apple. We do not receive or store your payment information. This service is governed by:</p>
+      <ul>
+        <li><a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a></li>
+        <li><a href="https://www.apple.com/legal/internet-services/itunes/" target="_blank">Apple Media Services Terms</a></li>
+      </ul>
+
+      <div class="highlight-box">
+        <p><strong>No other third-party services are used.</strong> TubeMentor does not include advertising SDKs, analytics platforms, crash reporting tools, or social media integrations.</p>
+      </div>
+    </div>
+
+    <div class="section" id="pp-5">
+      <h2>5. Data Storage & Security</h2>
+
+      <h3>5.1 Local Storage</h3>
+      <p>All your analysis history, usage counts, and app preferences are stored exclusively on your device using iOS UserDefaults and local storage. This data never leaves your device unless you explicitly share it.</p>
+
+      <h3>5.2 No Server-Side Storage</h3>
+      <p>TubeMentor does not operate its own backend servers or databases. We do not store any user data on remote servers controlled by us.</p>
+
+      <h3>5.3 Security Measures</h3>
+      <ul>
+        <li>All API communications use HTTPS/TLS encryption</li>
+        <li>API keys are stored securely within the application bundle</li>
+        <li>Local data is protected by iOS device encryption (when device passcode is enabled)</li>
+        <li>We do not transmit sensitive personal data over unencrypted channels</li>
+      </ul>
+
+      <h3>5.4 Data Breach Notification</h3>
+      <p>In the unlikely event of a data breach affecting user data, we will notify affected users and relevant supervisory authorities within the timeframes required by applicable law (72 hours under GDPR, promptly under KVKK).</p>
+    </div>
+
+    <div class="section" id="pp-6">
+      <h2>6. Data Retention</h2>
+      <p>Since data is stored locally on your device, you control retention:</p>
+      <ul>
+        <li><strong>Analysis history:</strong> Retained until you delete the app or manually clear history in Settings</li>
+        <li><strong>Usage counters:</strong> Reset monthly automatically; deleted when app is uninstalled</li>
+        <li><strong>Subscription status:</strong> Managed by Apple; restorable via "Restore Purchases"</li>
+      </ul>
+      <p>Data sent to Anthropic (Claude API) for processing is subject to Anthropic's own retention policies. Based on Anthropic's published policy, API inputs and outputs are not used to train models without explicit consent.</p>
+      <p>Data sent to Google (YouTube API) is subject to Google's own retention policies as described in their privacy policy.</p>
+    </div>
+
+    <div class="section" id="pp-7">
+      <h2>7. Your Rights</h2>
+      <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+
+      <h3>7.1 Rights Under GDPR (European Union / EEA)</h3>
+      <ul>
+        <li><strong>Right of Access (Art. 15):</strong> Request confirmation of whether we process your data and receive a copy</li>
+        <li><strong>Right to Rectification (Art. 16):</strong> Request correction of inaccurate data</li>
+        <li><strong>Right to Erasure / "Right to be Forgotten" (Art. 17):</strong> Request deletion of your data</li>
+        <li><strong>Right to Restriction of Processing (Art. 18):</strong> Request we limit how we use your data</li>
+        <li><strong>Right to Data Portability (Art. 20):</strong> Receive your data in a structured, machine-readable format</li>
+        <li><strong>Right to Object (Art. 21):</strong> Object to processing based on legitimate interests</li>
+        <li><strong>Right to Lodge a Complaint:</strong> You may lodge a complaint with your national supervisory authority (e.g., your country's Data Protection Authority)</li>
+      </ul>
+
+      <h3>7.2 Rights Under KVKK (Turkey)</h3>
+      <p>Under Turkish Personal Data Protection Law No. 6698, you have the right to:</p>
+      <ul>
+        <li>Learn whether your personal data is processed</li>
+        <li>Request information about the processing of your personal data</li>
+        <li>Learn the purpose of processing and whether data is used in accordance with its purpose</li>
+        <li>Know the third parties to whom data is transferred domestically or abroad</li>
+        <li>Request rectification of incomplete or inaccurate data</li>
+        <li>Request deletion or destruction of data</li>
+        <li>Request notification of rectification/deletion to third parties</li>
+        <li>Object to processing of your data that leads to adverse consequences</li>
+        <li>Request compensation for damages arising from unlawful processing</li>
+      </ul>
+      <p>To exercise KVKK rights, contact us at <a href="mailto:support@tubementor.xyz">support@tubementor.xyz</a>. We will respond within 30 days.</p>
+
+      <h3>7.3 Rights Under CCPA (California, USA)</h3>
+      <p>If you are a California resident, you have the right to:</p>
+      <ul>
+        <li><strong>Know</strong> what personal information is collected, used, shared, or sold</li>
+        <li><strong>Delete</strong> personal information held about you</li>
+        <li><strong>Opt-out</strong> of the sale of personal information (note: we do not sell personal information)</li>
+        <li><strong>Non-discrimination</strong> for exercising your rights</li>
+      </ul>
+      <p><strong>We do not sell personal information</strong> as defined under CCPA.</p>
+
+      <h3>7.4 How to Exercise Your Rights</h3>
+      <p>Since most data is stored locally on your device, you can exercise many rights directly:</p>
+      <ul>
+        <li><strong>Delete data:</strong> Uninstall the app OR go to Settings → Clear History</li>
+        <li><strong>Access data:</strong> View all your analyses in the History tab</li>
+        <li><strong>For other requests:</strong> Email <a href="mailto:support@tubementor.xyz">support@tubementor.xyz</a></li>
+      </ul>
+      <p>We will respond to all rights requests within 30 days (or within the timeframe required by applicable law).</p>
+    </div>
+
+    <div class="section" id="pp-8">
+      <h2>8. Children's Privacy</h2>
+      <p>TubeMentor is not directed to, and does not knowingly collect personal information from, children under the age of 13 (or 16 in certain jurisdictions, including EU member states under GDPR).</p>
+      <p>If we become aware that we have inadvertently collected personal data from a child under the applicable age of consent, we will take prompt steps to delete such information.</p>
+      <p>If you are a parent or guardian and believe your child has provided us with personal information, please contact us at <a href="mailto:support@tubementor.xyz">support@tubementor.xyz</a>.</p>
+    </div>
+
+    <div class="section" id="pp-9">
+      <h2>9. International Data Transfers</h2>
+      <p>TubeMentor is developed in Turkey and made available globally. When you use our app, certain data (video metadata) is processed by third-party services located in the United States (Google, Anthropic, Apple).</p>
+      <p>For users in the European Economic Area (EEA): These transfers are made under appropriate safeguards, including the EU-U.S. Data Privacy Framework and Standard Contractual Clauses where applicable, as governed by each third party's own compliance frameworks.</p>
+      <p>For users in Turkey: International transfers are conducted in accordance with Article 9 of KVKK, relying on adequate protection standards or explicit consent where required.</p>
+    </div>
+
+    <div class="section" id="pp-10">
+      <h2>10. Cookies & Tracking</h2>
+      <p>TubeMentor is a native iOS application and does not use cookies.</p>
+      <p>The application does not use any tracking technologies, including but not limited to:</p>
+      <ul>
+        <li>Web cookies or local storage (browser-based)</li>
+        <li>Device fingerprinting</li>
+        <li>Cross-app tracking (ATT framework — we do not request tracking permission)</li>
+        <li>Advertising identifiers (IDFA)</li>
+      </ul>
+      <p>The website <strong>tubementor.xyz</strong> is a static page hosted on GitHub Pages and does not use analytics cookies or tracking scripts.</p>
+    </div>
+
+    <div class="section" id="pp-11">
+      <h2>11. Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors.</p>
+      <p>When we make material changes, we will:</p>
+      <ul>
+        <li>Update the "Last Updated" date at the top of this page</li>
+        <li>Notify users through an in-app notice for significant changes</li>
+        <li>Where required by law, obtain your consent before implementing changes</li>
+      </ul>
+      <p>We encourage you to review this Privacy Policy periodically. Your continued use of TubeMentor after changes become effective constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <div class="section" id="pp-12">
+      <h2>12. Contact & Data Controller</h2>
+      <div class="info-box">
+        <p><strong>Data Controller:</strong> Kemal Yavuz (Individual Developer)<br>
+        <strong>Application:</strong> TubeMentor — AI YouTube Coach<br>
+        <strong>Email:</strong> <a href="mailto:support@tubementor.xyz">support@tubementor.xyz</a><br>
+        <strong>Website:</strong> <a href="https://tubementor.xyz">https://tubementor.xyz</a><br>
+        <strong>Country:</strong> Turkey<br><br>
+        For privacy-related inquiries, data rights requests, or complaints, please contact us at the email address above. We will respond within 30 days.</p>
+      </div>
+      <p>If you are an EU resident and we have not satisfactorily resolved your concern, you have the right to lodge a complaint with your local data protection authority. A list of EU data protection authorities is available at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank">edpb.europa.eu</a>.</p>
+      <p>If you are a Turkish resident and we have not satisfactorily resolved your concern, you may apply to the <strong>Kişisel Verileri Koruma Kurumu (KVKK)</strong> at <a href="https://www.kvkk.gov.tr" target="_blank">kvkk.gov.tr</a>.</p>
+    </div>
+
+  </div>
+  <!-- END PRIVACY POLICY -->
+
+  <!-- ==================== TERMS OF SERVICE ==================== -->
+  <div id="terms-page" class="page">
+
+    <div class="doc-header">
+      <div class="doc-label">Legal Document</div>
+      <h1>Terms of Service</h1>
+      <div class="doc-meta">
+        <span>📅 Effective Date: March 9, 2026</span>
+        <span>🔄 Last Updated: March 9, 2026</span>
+        <span>🌍 Applies Globally</span>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p><strong>Please read these Terms carefully before using TubeMentor.</strong> By downloading or using the app, you agree to be bound by these Terms. If you do not agree, do not use the application.</p>
+    </div>
+
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ol>
+        <li><a href="#tos-1">Acceptance of Terms</a></li>
+        <li><a href="#tos-2">Description of Service</a></li>
+        <li><a href="#tos-3">Eligibility</a></li>
+        <li><a href="#tos-4">User Obligations & Acceptable Use</a></li>
+        <li><a href="#tos-5">Subscription Plans & Payments</a></li>
+        <li><a href="#tos-6">Cancellation & Refunds</a></li>
+        <li><a href="#tos-7">Intellectual Property</a></li>
+        <li><a href="#tos-8">AI-Generated Content Disclaimer</a></li>
+        <li><a href="#tos-9">Third-Party Services</a></li>
+        <li><a href="#tos-10">Disclaimer of Warranties</a></li>
+        <li><a href="#tos-11">Limitation of Liability</a></li>
+        <li><a href="#tos-12">Indemnification</a></li>
+        <li><a href="#tos-13">Termination</a></li>
+        <li><a href="#tos-14">Governing Law & Dispute Resolution</a></li>
+        <li><a href="#tos-15">Changes to Terms</a></li>
+        <li><a href="#tos-16">Contact</a></li>
+      </ol>
+    </div>
+
+    <div class="section" id="tos-1">
+      <h2>1. Acceptance of Terms</h2>
+      <p>These Terms of Service ("Terms") constitute a legally binding agreement between you ("User", "you") and <strong>Kemal Yavuz</strong> ("Developer", "we", "us"), the individual developer of TubeMentor.</p>
+      <p>By accessing, downloading, installing, or using TubeMentor (the "App" or "Service"), you acknowledge that you have read, understood, and agree to be bound by these Terms and our <a href="#" onclick="showTab('privacy')">Privacy Policy</a>.</p>
+      <p>If you are using the App on behalf of an organization, you represent that you have authority to bind that organization to these Terms.</p>
+    </div>
+
+    <div class="section" id="tos-2">
+      <h2>2. Description of Service</h2>
+      <p>TubeMentor is an AI-powered YouTube channel analysis iOS application that provides:</p>
+      <ul>
+        <li>Analysis of publicly available YouTube video metadata</li>
+        <li>AI-generated insights, scores, and recommendations for YouTube creators</li>
+        <li>Competitor video comparison and head-to-head analysis</li>
+        <li>Channel-level audit and health assessment</li>
+        <li>AI-powered description writing and pre-publish analysis tools</li>
+        <li>Trend analysis and progress tracking features</li>
+      </ul>
+      <p>The Service uses publicly available YouTube data and AI analysis to generate insights. <strong>TubeMentor is an independent application and is not affiliated with, endorsed by, or officially connected to YouTube, Google, or Anthropic.</strong></p>
+    </div>
+
+    <div class="section" id="tos-3">
+      <h2>3. Eligibility</h2>
+      <p>To use TubeMentor, you must:</p>
+      <ul>
+        <li>Be at least <strong>13 years of age</strong> (or 16 in certain jurisdictions, including EU member states)</li>
+        <li>Have the legal capacity to enter into a binding agreement</li>
+        <li>Not be prohibited from using the Service under applicable law</li>
+        <li>Have a valid Apple ID to download the application</li>
+      </ul>
+      <p>If you are under 18, you represent that your parent or legal guardian has reviewed and agrees to these Terms on your behalf.</p>
+    </div>
+
+    <div class="section" id="tos-4">
+      <h2>4. User Obligations & Acceptable Use</h2>
+
+      <h3>4.1 You agree to:</h3>
+      <ul>
+        <li>Only submit URLs of publicly available YouTube videos</li>
+        <li>Use the Service for lawful purposes only</li>
+        <li>Comply with YouTube's Terms of Service when using data or insights obtained through TubeMentor</li>
+        <li>Comply with Anthropic's Usage Policy regarding AI-generated content</li>
+        <li>Use AI-generated insights as guidance, not as guaranteed outcomes</li>
+      </ul>
+
+      <h3>4.2 You agree NOT to:</h3>
+      <ul>
+        <li>Attempt to reverse-engineer, decompile, or disassemble the App</li>
+        <li>Circumvent, disable, or interfere with quota limits or subscription restrictions</li>
+        <li>Share, resell, or distribute your subscription access to third parties</li>
+        <li>Use the App to analyze private, unlisted, or age-restricted videos</li>
+        <li>Submit any content that violates third-party intellectual property rights</li>
+        <li>Use automated means (bots, scrapers) to access the Service</li>
+        <li>Misrepresent the source of AI-generated content as your own original work in contexts that require disclosure</li>
+        <li>Use the Service for any illegal, harmful, or abusive purpose</li>
+      </ul>
+
+      <h3>4.3 AI Disclosure Obligation</h3>
+      <p>When using AI-generated descriptions, titles, or scripts produced by TubeMentor in your YouTube content or other published materials, you are responsible for complying with any applicable platform policies regarding AI-generated content disclosure (including YouTube's own disclosure requirements).</p>
+    </div>
+
+    <div class="section" id="tos-5">
+      <h2>5. Subscription Plans & Payments</h2>
+
+      <h3>5.1 Available Plans</h3>
+      <table>
+        <tr>
+          <th>Plan</th>
+          <th>Price</th>
+          <th>Monthly Analyses</th>
+          <th>Key Features</th>
+        </tr>
+        <tr>
+          <td>Free</td>
+          <td>$0</td>
+          <td>2</td>
+          <td>Basic video analysis only</td>
+        </tr>
+        <tr>
+          <td>Starter</td>
+          <td>$3.99/month</td>
+          <td>15</td>
+          <td>+ Competitor comparison</td>
+        </tr>
+        <tr>
+          <td>Pro</td>
+          <td>$7.99/month</td>
+          <td>30</td>
+          <td>+ Channel analysis</td>
+        </tr>
+        <tr>
+          <td>Creator</td>
+          <td>$19.99/month</td>
+          <td>100</td>
+          <td>+ All Creator tools</td>
+        </tr>
+      </table>
+
+      <h3>5.2 Billing</h3>
+      <ul>
+        <li>All payments are processed by <strong>Apple Inc.</strong> through the App Store</li>
+        <li>Subscriptions are billed monthly in advance on your Apple ID</li>
+        <li>Prices are displayed in USD; your local currency equivalent may vary</li>
+        <li>Applicable taxes may be added by Apple depending on your location</li>
+      </ul>
+
+      <h3>5.3 Auto-Renewal</h3>
+      <p>Subscriptions <strong>automatically renew</strong> monthly unless cancelled at least <strong>24 hours before</strong> the end of the current billing period. Your Apple ID will be charged within 24 hours prior to the end of the current period.</p>
+
+      <h3>5.4 Quota Policy</h3>
+      <ul>
+        <li>Monthly analysis quotas reset on the 1st of each calendar month</li>
+        <li>Unused analyses do not roll over to the next month</li>
+        <li>Quota limits apply per device (local tracking)</li>
+        <li>We reserve the right to adjust quota limits with 30 days advance notice</li>
+      </ul>
+
+      <h3>5.5 Price Changes</h3>
+      <p>We reserve the right to change subscription prices. Price changes will take effect at the start of your next billing period. We will notify you of material price changes via in-app notice or email (if provided) at least 30 days in advance.</p>
+    </div>
+
+    <div class="section" id="tos-6">
+      <h2>6. Cancellation & Refunds</h2>
+
+      <h3>6.1 Cancellation</h3>
+      <p>You may cancel your subscription at any time through:</p>
+      <ul>
+        <li><strong>iPhone:</strong> Settings → [Your Name] → Subscriptions → TubeMentor → Cancel</li>
+        <li><strong>App Store:</strong> Account → Subscriptions</li>
+      </ul>
+      <p>Cancellation takes effect at the end of the current billing period. You retain access to paid features until the subscription expires.</p>
+
+      <h3>6.2 Refunds</h3>
+      <p>All purchases are processed by Apple. Refund requests must be submitted directly to Apple:</p>
+      <ul>
+        <li>Visit <a href="https://reportaproblem.apple.com" target="_blank">reportaproblem.apple.com</a></li>
+        <li>Or contact Apple Support directly</li>
+      </ul>
+      <p>We do not process refunds directly. Apple's refund policies apply to all purchases made through the App Store.</p>
+
+      <h3>6.3 Free Tier</h3>
+      <p>The Free tier is provided at no charge and may be modified or discontinued at any time with reasonable notice.</p>
+    </div>
+
+    <div class="section" id="tos-7">
+      <h2>7. Intellectual Property</h2>
+
+      <h3>7.1 Our Intellectual Property</h3>
+      <p>TubeMentor, including its name, logo, design, code, user interface, and all content created by us, is owned by Kemal Yavuz and is protected by applicable intellectual property laws. You may not copy, modify, distribute, sell, or lease any part of the Service without our prior written consent.</p>
+
+      <h3>7.2 Your Content</h3>
+      <p>You retain ownership of all content you create using TubeMentor (including AI-generated descriptions, titles, and analysis results you save). By using the Service, you grant us no license to your content.</p>
+
+      <h3>7.3 AI-Generated Output</h3>
+      <p>The AI-generated analyses, descriptions, and recommendations produced by TubeMentor are provided for your use. We make no intellectual property claims over AI-generated outputs delivered to you. However, similar outputs may be generated for other users, and we do not guarantee exclusivity.</p>
+
+      <h3>7.4 YouTube & Third-Party Trademarks</h3>
+      <p>"YouTube" is a registered trademark of Google LLC. "Claude" is a trademark of Anthropic, PBC. These trademarks are used solely for descriptive purposes. TubeMentor is not affiliated with or endorsed by these companies.</p>
+    </div>
+
+    <div class="section" id="tos-8">
+      <h2>8. AI-Generated Content Disclaimer</h2>
+      <div class="highlight-box">
+        <p><strong>Important:</strong> TubeMentor uses artificial intelligence to generate analysis and recommendations. These insights are provided for <strong>informational and educational purposes only</strong>.</p>
+      </div>
+      <ul>
+        <li>AI-generated analysis is based on publicly available metadata and general YouTube best practices at the time of analysis</li>
+        <li>We do <strong>not</strong> guarantee that following our recommendations will result in improved YouTube performance, increased views, subscribers, revenue, or monetization eligibility</li>
+        <li>YouTube's algorithm, policies, and ranking factors change frequently; recommendations may become outdated</li>
+        <li>AI-generated content may contain errors, inaccuracies, or bias — always apply your own judgment</li>
+        <li>Score ratings (0-100) are AI estimates for comparative purposes only and do not represent official YouTube metrics</li>
+        <li>TubeMentor does not have access to your private YouTube Analytics data and cannot guarantee analysis accuracy without it</li>
+      </ul>
+      <p>You assume full responsibility for how you use AI-generated insights in your YouTube strategy.</p>
+    </div>
+
+    <div class="section" id="tos-9">
+      <h2>9. Third-Party Services</h2>
+      <p>TubeMentor integrates with third-party services. Your use of these services is also governed by their respective terms:</p>
+      <ul>
+        <li><strong>YouTube Data API:</strong> <a href="https://www.youtube.com/t/terms" target="_blank">YouTube Terms of Service</a> — by using TubeMentor, you also agree to YouTube's Terms</li>
+        <li><strong>Anthropic Claude API:</strong> <a href="https://www.anthropic.com/legal/aup" target="_blank">Anthropic Usage Policy</a></li>
+        <li><strong>Apple App Store:</strong> <a href="https://www.apple.com/legal/internet-services/itunes/" target="_blank">Apple Media Services Terms</a></li>
+      </ul>
+      <p>We are not responsible for the actions, content, or practices of these third-party services. Service disruptions or policy changes by third parties may affect TubeMentor's functionality without prior notice.</p>
+    </div>
+
+    <div class="section" id="tos-10">
+      <h2>10. Disclaimer of Warranties</h2>
+      <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, TUBEMENTOR IS PROVIDED <strong>"AS IS"</strong> AND <strong>"AS AVAILABLE"</strong> WITHOUT ANY WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED.</p>
+      <p>We specifically disclaim all warranties including, without limitation:</p>
+      <ul>
+        <li>Warranties of merchantability, fitness for a particular purpose, and non-infringement</li>
+        <li>That the Service will be uninterrupted, error-free, or secure</li>
+        <li>That any errors or defects will be corrected</li>
+        <li>That AI-generated analysis will be accurate, complete, or reliable</li>
+        <li>That results obtained from using the Service will meet your expectations</li>
+      </ul>
+      <p>This disclaimer applies to the fullest extent permitted by law. Some jurisdictions do not allow disclaimer of implied warranties, so some of the above may not apply to you.</p>
+    </div>
+
+    <div class="section" id="tos-11">
+      <h2>11. Limitation of Liability</h2>
+      <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL KEMAL YAVUZ, AS THE DEVELOPER OF TUBEMENTOR, BE LIABLE FOR:</p>
+      <ul>
+        <li>Any indirect, incidental, special, consequential, or punitive damages</li>
+        <li>Loss of profits, revenue, data, business opportunities, or goodwill</li>
+        <li>Damages resulting from your reliance on AI-generated analysis or recommendations</li>
+        <li>Damages resulting from third-party service failures (YouTube API, Claude API, Apple)</li>
+        <li>Damages resulting from unauthorized access to your data</li>
+        <li>Any other damages arising out of or related to your use of TubeMentor</li>
+      </ul>
+      <p><strong>Our total liability to you for any claims arising under these Terms shall not exceed the amount you paid for the Service in the 12 months preceding the claim, or USD $10.00, whichever is greater.</strong></p>
+      <p>Some jurisdictions do not allow limitation of liability for certain types of damages. If you are a consumer in the EU or Turkey, statutory rights under consumer protection laws remain unaffected by this limitation.</p>
+    </div>
+
+    <div class="section" id="tos-12">
+      <h2>12. Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless Kemal Yavuz and any affiliates, from and against any claims, liabilities, damages, losses, and expenses (including reasonable legal fees) arising out of or in any way connected with:</p>
+      <ul>
+        <li>Your violation of these Terms</li>
+        <li>Your violation of any third-party rights, including intellectual property rights</li>
+        <li>Your violation of applicable law</li>
+        <li>Your use of AI-generated content in a manner that causes harm to third parties</li>
+      </ul>
+    </div>
+
+    <div class="section" id="tos-13">
+      <h2>13. Termination</h2>
+
+      <h3>13.1 Termination by You</h3>
+      <p>You may stop using TubeMentor at any time by deleting the application from your device and cancelling any active subscriptions through Apple.</p>
+
+      <h3>13.2 Termination by Us</h3>
+      <p>We reserve the right to suspend or terminate your access to the Service immediately, without prior notice, if:</p>
+      <ul>
+        <li>You breach these Terms in a material way</li>
+        <li>You use the Service in a manner that could harm other users, third parties, or us</li>
+        <li>Required by law or regulatory authority</li>
+        <li>We decide to discontinue the Service (with reasonable notice where possible)</li>
+      </ul>
+
+      <h3>13.3 Effect of Termination</h3>
+      <p>Upon termination, your right to use the Service ceases. Locally stored data on your device remains until you delete it. Sections 7, 8, 10, 11, 12, and 14 survive termination.</p>
+    </div>
+
+    <div class="section" id="tos-14">
+      <h2>14. Governing Law & Dispute Resolution</h2>
+
+      <h3>14.1 Governing Law</h3>
+      <p>These Terms are governed by and construed in accordance with the laws of the <strong>Republic of Turkey</strong>, without regard to its conflict of law provisions.</p>
+
+      <h3>14.2 For EU/EEA Users</h3>
+      <p>If you are a consumer residing in the European Union or European Economic Area, you also benefit from mandatory consumer protection provisions of your country of residence. Nothing in these Terms limits your rights as a consumer under applicable EU law, including Directive 2011/83/EU on consumer rights and any national implementing legislation.</p>
+
+      <h3>14.3 For Turkish Users</h3>
+      <p>Turkish consumer protection laws (Tüketicinin Korunması Hakkında Kanun No. 6502) and KVKK rights apply to Turkish residents in addition to these Terms.</p>
+
+      <h3>14.4 Dispute Resolution</h3>
+      <p>We encourage you to first contact us at <a href="mailto:support@tubementor.xyz">support@tubementor.xyz</a> to resolve any dispute informally. We will make good-faith efforts to resolve complaints within 30 days.</p>
+      <p>If informal resolution fails, disputes shall be submitted to the competent courts of <strong>Istanbul, Turkey</strong>, except where mandatory consumer protection laws of your jurisdiction require otherwise.</p>
+
+      <h3>14.5 Alternative Dispute Resolution</h3>
+      <p>EU residents may use the European Online Dispute Resolution platform at <a href="https://ec.europa.eu/consumers/odr" target="_blank">ec.europa.eu/consumers/odr</a> for resolving disputes.</p>
+    </div>
+
+    <div class="section" id="tos-15">
+      <h2>15. Changes to Terms</h2>
+      <p>We reserve the right to modify these Terms at any time. When we make material changes, we will:</p>
+      <ul>
+        <li>Update the "Last Updated" date at the top of this page</li>
+        <li>Notify users through an in-app notice for significant changes</li>
+        <li>Provide at least <strong>30 days notice</strong> before changes take effect for material changes affecting your rights</li>
+      </ul>
+      <p>Your continued use of TubeMentor after changes take effect constitutes acceptance of the new Terms. If you do not agree to the updated Terms, you must stop using the Service and cancel any subscriptions.</p>
+    </div>
+
+    <div class="section" id="tos-16">
+      <h2>16. Contact</h2>
+      <div class="info-box">
+        <p><strong>Developer:</strong> Kemal Yavuz (Individual Developer)<br>
+        <strong>Application:</strong> TubeMentor — AI YouTube Coach<br>
+        <strong>Email:</strong> <a href="mailto:support@tubementor.xyz">support@tubementor.xyz</a><br>
+        <strong>Website:</strong> <a href="https://tubementor.xyz">https://tubementor.xyz</a><br>
+        <strong>Country:</strong> Turkey<br><br>
+        For questions about these Terms, please contact us at the email above. We aim to respond within 5 business days.</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- END TERMS OF SERVICE -->
+
+</div>
+
+<footer>
+  <p>© 2026 TubeMentor by Kemal Yavuz. &nbsp;|&nbsp; <a href="#" onclick="showTab('privacy')">Privacy Policy</a> &nbsp;|&nbsp; <a href="#" onclick="showTab('terms')">Terms of Service</a> &nbsp;|&nbsp; <a href="mailto:support@tubementor.xyz">support@tubementor.xyz</a></p>
+</footer>
+
+<script>
+function showTab(tab) {
+  document.getElementById('privacy-page').classList.remove('active');
+  document.getElementById('terms-page').classList.remove('active');
+  document.getElementById('tab-privacy').classList.remove('active');
+  document.getElementById('tab-terms').classList.remove('active');
+  document.getElementById('nav-privacy').classList.remove('active');
+  document.getElementById('nav-terms').classList.remove('active');
+
+  document.getElementById(tab + '-page').classList.add('active');
+  document.getElementById('tab-' + tab).classList.add('active');
+  document.getElementById('nav-' + tab).classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
