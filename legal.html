@@ -728,3 +728,46 @@
   <!-- END TERMS OF SERVICE -->
 
 </div>
+
+<script>
+function showTab(tabId) {
+  // Hide both pages
+  document.getElementById('privacy-page').style.display = 'none';
+  document.getElementById('terms-page').style.display = 'none';
+
+  // Remove active from tab buttons
+  document.getElementById('tab-privacy').classList.remove('active');
+  document.getElementById('tab-terms').classList.remove('active');
+
+  // Remove active from nav links
+  document.querySelectorAll('.nav-links a').forEach(function(a) {
+    a.classList.remove('active');
+  });
+
+  // Show selected page
+  document.getElementById(tabId + '-page').style.display = 'block';
+
+  // Activate tab button
+  document.getElementById('tab-' + tabId).classList.add('active');
+
+  // Activate nav link
+  var navLink = document.getElementById('nav-' + tabId);
+  if (navLink) navLink.classList.add('active');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Hide terms page by default (privacy shown via CSS already)
+  document.getElementById('terms-page').style.display = 'none';
+  document.getElementById('privacy-page').style.display = 'block';
+
+  // Check URL hash
+  var hash = window.location.hash.replace('#', '');
+  if (hash === 'terms') {
+    showTab('terms');
+  } else {
+    showTab('privacy');
+  }
+});
+</script>
+</body>
+</html>
