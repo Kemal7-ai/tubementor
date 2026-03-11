@@ -709,7 +709,7 @@
   .hero-stats { animation-delay: 0.4s; }
 
   /* HIDDEN pages */
-  .page { display: none; }
+  
   .page.active { display: block; }
   #home { display: block; }
 </style>
@@ -730,8 +730,8 @@
   </ul>
 </nav>
 
-<!-- HOME PAGE -->
-<div id="home" class="page active">
+<div id="main-content"><!-- HOME PAGE -->
+<div id="home">
 
   <section class="hero">
     <div class="hero-badge">✦ AI-Powered YouTube Growth</div>
@@ -913,7 +913,8 @@
 </div>
 <!-- END HOME -->
 
-<!-- PRIVACY PAGE -->
+<!-- PRIVACY PAGE --></div>
+
 <div id="privacy" class="page">
   <div class="page-hero">
     <div class="section-label">Legal</div>
@@ -1108,16 +1109,22 @@
 
 <script>
 function showPage(pageId) {
-  var homeSections = document.querySelectorAll('.hero, .features-section, .pricing-section, .cta-section, section');
-  var pages = document.querySelectorAll('.page');
+  var legalPages = ['privacy', 'terms', 'support'];
+  var homeContent = document.getElementById('home');
   
   if (pageId === 'home') {
-    pages.forEach(function(p) { p.style.display = 'none'; });
-    homeSections.forEach(function(s) { s.style.display = ''; });
+    legalPages.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.style.display = 'none';
+    });
+    if (homeContent) homeContent.style.display = '';
     window.scrollTo(0, 0);
   } else {
-    homeSections.forEach(function(s) { s.style.display = 'none'; });
-    pages.forEach(function(p) { p.style.display = 'none'; });
+    if (homeContent) homeContent.style.display = 'none';
+    legalPages.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.style.display = 'none';
+    });
     var page = document.getElementById(pageId);
     if (page) {
       page.style.display = 'block';
@@ -1126,8 +1133,10 @@ function showPage(pageId) {
   }
 }
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.page').forEach(function(p) {
-    p.style.display = 'none';
+  // Only hide privacy, terms, support pages - NOT home
+  ['privacy', 'terms', 'support'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.style.display = 'none';
   });
 });
 </script>
