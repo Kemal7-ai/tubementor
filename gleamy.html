@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gleamy — Legal</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #9482E6;
+    --pink: #E894B8;
+    --yellow: #FFD93D;
+    --bg: #0e0b1a;
+    --surface: #16112a;
+    --border: rgba(148, 130, 230, 0.15);
+    --text: #f0ecff;
+    --muted: rgba(240, 236, 255, 0.5);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px; left: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(148,130,230,0.12) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(232,148,184,0.10) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+  header {
+    position: relative; z-index: 10;
+    padding: 32px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+  }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-icon {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .logo-text {
+    font-size: 20px; font-weight: 700;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  nav { display: flex; gap: 8px; }
+  nav a {
+    padding: 8px 16px; border-radius: 20px;
+    font-size: 14px; font-weight: 500;
+    text-decoration: none; color: var(--muted);
+    transition: all 0.2s; border: 1px solid transparent;
+  }
+  nav a:hover, nav a.active {
+    color: var(--text); border-color: var(--border);
+    background: rgba(148,130,230,0.08);
+  }
+  .hero {
+    position: relative; z-index: 10;
+    padding: 80px 40px 60px;
+    max-width: 760px; margin: 0 auto; text-align: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 14px;
+    background: rgba(255,217,61,0.1); border: 1px solid rgba(255,217,61,0.2);
+    border-radius: 20px; font-size: 12px; font-weight: 500;
+    color: var(--yellow); margin-bottom: 24px;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.1; margin-bottom: 16px;
+  }
+  .hero h1 span {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .hero p { color: var(--muted); font-size: 16px; line-height: 1.7; max-width: 480px; margin: 0 auto; }
+  .tab-switcher {
+    position: relative; z-index: 10;
+    display: flex; justify-content: center;
+    margin: 0 auto 60px; max-width: 400px; padding: 0 40px;
+  }
+  .tab-btn {
+    flex: 1; padding: 12px 24px;
+    font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--muted); cursor: pointer; transition: all 0.2s;
+  }
+  .tab-btn:first-child { border-radius: 12px 0 0 12px; border-right: none; }
+  .tab-btn:last-child { border-radius: 0 12px 12px 0; }
+  .tab-btn.active {
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: white; border-color: transparent;
+  }
+  .content { position: relative; z-index: 10; max-width: 760px; margin: 0 auto; padding: 0 40px 100px; display: none; }
+  .content.active { display: block; }
+  .last-updated {
+    font-size: 13px; color: var(--muted); margin-bottom: 48px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .last-updated::before {
+    content: ''; display: inline-block;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--yellow);
+  }
+  .section {
+    margin-bottom: 48px; padding: 32px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 20px; position: relative; overflow: hidden;
+  }
+  .section::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--purple), var(--pink)); opacity: 0.5;
+  }
+  .section-number { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; }
+  .section h2 { font-family: 'DM Serif Display', serif; font-size: 22px; margin-bottom: 16px; color: var(--text); }
+  .section p, .section li { font-size: 15px; line-height: 1.75; color: rgba(240,236,255,0.7); }
+  .section ul { padding-left: 20px; margin-top: 12px; }
+  .section li { margin-bottom: 8px; }
+  .section li::marker { color: var(--purple); }
+  .highlight-box {
+    background: rgba(255,217,61,0.06); border: 1px solid rgba(255,217,61,0.15);
+    border-radius: 12px; padding: 16px 20px; margin-top: 16px;
+    font-size: 14px; color: rgba(255,217,61,0.8); line-height: 1.6;
+  }
+  .info-box {
+    background: rgba(148,130,230,0.06); border: 1px solid rgba(148,130,230,0.2);
+    border-radius: 12px; padding: 16px 20px; margin-top: 16px;
+    font-size: 14px; color: rgba(148,130,230,0.9); line-height: 1.6;
+  }
+  .contact-link {
+    color: var(--purple); text-decoration: none; font-weight: 500;
+    border-bottom: 1px solid rgba(148,130,230,0.3); transition: border-color 0.2s;
+  }
+  .contact-link:hover { border-color: var(--purple); }
+  footer {
+    position: relative; z-index: 10; padding: 32px 40px;
+    border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  }
+  footer p { font-size: 13px; color: var(--muted); }
+  footer a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--text); }
+  @media (max-width: 600px) {
+    header { padding: 20px; }
+    .hero { padding: 48px 20px 40px; }
+    .tab-switcher { padding: 0 20px; }
+    .content { padding: 0 20px 60px; }
+    .section { padding: 24px; }
+    nav { display: none; }
+    footer { padding: 24px 20px; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="logo">
+    <div class="logo-icon">😊</div>
+    <span class="logo-text">gleamy</span>
+  </a>
+  <nav>
+    <a href="#" class="active" id="nav-privacy" onclick="showTab('privacy'); return false;">Privacy Policy</a>
+    <a href="#" id="nav-terms" onclick="showTab('terms'); return false;">Terms of Service</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">✦ Legal Documents</div>
+  <h1>We keep it <span>simple & honest</span></h1>
+  <p>Gleamy is built on trust. Here's exactly what we collect, why, and how we protect you.</p>
+</div>
+
+<div class="tab-switcher">
+  <button class="tab-btn active" id="btn-privacy" onclick="showTab('privacy')">Privacy Policy</button>
+  <button class="tab-btn" id="btn-terms" onclick="showTab('terms')">Terms of Service</button>
+</div>
+
+<!-- PRIVACY POLICY -->
+<div class="content active" id="privacy">
+  <div class="last-updated">Last updated: March 24, 2026</div>
+
+  <div class="section">
+    <div class="section-number">01</div>
+    <h2>Overview</h2>
+    <p>Gleamy ("we", "us", or "our") is a wellness application that uses your device's front-facing camera to measure smile intensity. We are committed to protecting your privacy. This policy explains what data we collect and how we use it.</p>
+    <div class="highlight-box">✦ We never store images of your face. All face tracking happens entirely on your device using Apple's ARKit framework.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-number">02</div>
+    <h2>Camera & Face Data</h2>
+    <p>Gleamy uses Apple's ARKit TrueDepth camera technology to measure your smile. Here's what actually happens:</p>
+    <ul>
+      <li>ARKit projects 30,000 infrared points onto your face and processes this data entirely on-device using Apple's Neural Engine.</li>
+      <li>Gleamy only receives two numeric values: <strong>mouthSmileLeft</strong> and <strong>mouthSmileRight</strong> (floating point numbers between 0.0 and 1.0).</li>
+      <li>No images, no video, no 3D facial maps are ever stored or transmitted.</li>
+      <li>Face data never leaves your device.</li>
+    </ul>
+    <div class="highlight-box">✦ Because we only process two anonymous numeric values on-device, Gleamy does not collect biometric identifiers as defined under GDPR, KVKK, or CCPA.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-number">03</div>
+    <h2>Advertising (Google AdMob)</h2>
+    <p>Gleamy is free and supported by ads. We use Google AdMob to display interstitial advertisements. AdMob may collect:</p>
+    <ul>
+      <li>Device identifiers (IDFA, if you grant permission via Apple's App Tracking Transparency prompt)</li>
+      <li>IP address and approximate location</li>
+      <li>App usage data for ad targeting</li>
+      <li>Device type, OS version, and language</li>
+    </ul>
+    <p style="margin-top:12px;">You can opt out of personalized ads at any time in your device's <strong>Settings → Privacy & Security → Apple Advertising</strong>. For more information, see <a href="https://policies.google.com/privacy" class="contact-link" target="_blank">Google's Privacy Policy</a>.</p>
+    <div class="info-box">✦ When submitting to the App Store, we declare "Third-Party Advertising" data use in our App Privacy section, in compliance with Apple's requirements.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-number">04</div>
+    <h2>In-App Purchases</h2>
+    <p>Gleamy offers a one-time "Remove Ads" purchase processed entirely through Apple's App Store. We do not collect or store any payment information. All transactions are handled by Apple.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-number">05</div>
+    <h2>Data We Do Not Collect</h2>
+    <ul>
+      <li>No account registration required — no name, email, or password</li>
+      <li>No photos or videos of your face</li>
+      <li>No biometric identifiers</li>
+      <li>No precise location data</li>
+      <li>No data is shared with third parties beyond AdMob</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-number">06</div>
+    <h2>Your Rights & Data Deletion</h2>
+    <p>Since Gleamy does not collect personal data on our servers, there is nothing for us to delete. However, for advertising-related data collected by AdMob:</p>
+    <ul>
+      <li><strong>Reset your Advertising ID:</strong> Settings → Privacy & Security → Apple Advertising → Reset Advertising Identifier</li>
+      <li><strong>Opt out of personalized ads:</strong> Settings → Privacy & Security → Apple Advertising → turn off Personalized Ads</li>
+      <li><strong>Request Google data deletion:</strong> <a href="https://myaccount.google.com/delete-services-or-account" class="contact-link" target="_blank">myaccount.google.com</a></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-number">07</div>
+    <h2>KVKK — Turkish Users</h2>
+    <p>Türkiye'den kullanıcılar için: Gleamy, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamındaki yükümlülüklere uymaktadır.</p>
+    <ul>
+      <li>Yüz görüntüsü veya biyometrik veri işlenmez — yalnızca cihaz üzerinde anonim sayısal değerler üretilir.</li>
+      <li>Reklam amacıyla Google AdMob tarafından cihaz tanımlayıcısı işlenebilir; bu işleme açık rıza (ATT izni) ile gerçekleşir.</li>
+      <li>Veri işleme veya haklarınız hakkında sormak için: <a href="mailto:support@tubementor.xyz" class="contact-link">support@tubementor.xyz</a></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-number">08</div>
+    <h2>Children's Privacy</h2>
+    <p>Gleamy is not directed at children under 13 years of age (or under 16 in the EU/UK). We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us immediately.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-number">09</div>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last updated" date at the top of this page. Continued use of Gleamy after changes constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-number">10</div>
+    <h2>Contact Us</h2>
+    <p>If you have questions about this Privacy Policy, please contact us at:</p>
+    <p style="margin-top:12px;"><a href="mailto:support@tubementor.xyz" class="contact-link">support@tubementor.xyz</a></p>
+  </div>
+</div>
+
+<!-- TERMS OF SERVICE -->
+<div class="content" id="terms">
+  <div class="last-updated">Last updated: March 24, 2026</div>
+
+  <div class="section">
+    <div class="section-number">01</div>
+    <h2>Acceptance of Terms</h2>
+    <p>By downloading or using Gleamy, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the application.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-number">02</div>
+    <h2>Description of Service</h2>
+    <p>Gleamy is a wellness application that uses facial tracking technology to measure and encourage smiling as a mood enhancement technique. The app is based on the psychological concept that physical smiling can positively influence emotional states.</p>
+    <div class="highlight-box">✦ Gleamy is a wellness tool, not a medical device. It is not intended to diagnose, treat, cure, or prevent any disease or mental health condition. Smile scores are relative measurements for motivational purposes only.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-number">03</div>
+    <h2>Use of the Application</h2>
+    <p>You agree to use Gleamy only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+    <ul>
+      <li>Use the app in any way that violates applicable laws or regulations</li>
+      <li>Attempt to reverse engineer or extract the source code</li>
+      <li>Use the app to harm yourself or others</li>
+      <li>Create derivative works based on the app without permission</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-number">04</div>
+    <h2>In-App Purchases</h2>
+    <p>Gleamy offers a one-time non-consumable purchase to remove advertisements ("Remove Ads"). All purchases are:</p>
+    <ul>
+      <li>Processed through Apple's App Store</li>
+      <li>Subject to Apple's refund policies</li>
+      <li>Non-transferable between devices or accounts</li>
+      <li>Restored automatically on the same Apple ID</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-number">05</div>
+    <h2>Disclaimer of Warranties</h2>
+    <p>Gleamy is provided "as is" without warranties of any kind. We do not guarantee that the app will be error-free, uninterrupted, or that the smile measurement will be 100% accurate. The application is not a substitute for professional medical or psychological advice, diagnosis, or treatment.</p>
+    <div class="info-box">✦ Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-number">06</div>
+    <h2>Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, Gleamy and its developers shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the application, including but not limited to reliance on smile scores for health or wellness decisions.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-number">07</div>
+    <h2>Governing Law</h2>
+    <p>These Terms shall be governed by and construed in accordance with applicable laws. For users in Turkey, these Terms are also subject to applicable Turkish consumer protection and digital services regulations.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-number">08</div>
+    <h2>Contact</h2>
+    <p>For questions regarding these Terms of Service:</p>
+    <p style="margin-top:12px;"><a href="mailto:support@tubementor.xyz" class="contact-link">support@tubementor.xyz</a></p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Gleamy. All rights reserved.</p>
+  <div style="display:flex; gap:20px;">
+    <a href="#" onclick="showTab('privacy'); return false;">Privacy Policy</a>
+    <a href="#" onclick="showTab('terms'); return false;">Terms of Service</a>
+  </div>
+</footer>
+
+<script>
+function showTab(tab) {
+  document.querySelectorAll('.content').forEach(function(c) { c.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('nav a').forEach(function(a) { a.classList.remove('active'); });
+
+  document.getElementById(tab).classList.add('active');
+
+  if (tab === 'privacy') {
+    document.getElementById('btn-privacy').classList.add('active');
+    document.getElementById('nav-privacy').classList.add('active');
+  } else {
+    document.getElementById('btn-terms').classList.add('active');
+    document.getElementById('nav-terms').classList.add('active');
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
